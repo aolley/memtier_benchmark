@@ -181,7 +181,7 @@ shard_connection* cluster_client::add_shard_connection(char* address, char* port
     memset(&hints, 0, sizeof(hints));
     hints.ai_flags = AI_PASSIVE;
     hints.ai_socktype = SOCK_STREAM;
-    hints.ai_family = AF_INET;
+    hints.ai_family = AF_INET6;
 
     int res = getaddrinfo(address, port, &hints, &addr_info);
     if (res != 0) {

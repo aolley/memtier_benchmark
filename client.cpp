@@ -202,9 +202,9 @@ int client::connect(void)
     }
 
     // Just in case we got domain name and not ip, we convert it
-    struct sockaddr_in *ipv4 = (struct sockaddr_in *)addr.ci_addr;
-    char address[INET_ADDRSTRLEN];
-    inet_ntop(AF_INET, &(ipv4->sin_addr), address, INET_ADDRSTRLEN);
+    struct sockaddr_in6 *ipv6 = (struct sockaddr_in6 *)addr.ci_addr;
+    char address[INET6_ADDRSTRLEN];
+    inet_ntop(AF_INET6, &(ipv6->sin6_addr), address, INET6_ADDRSTRLEN);
 
     char port_str[20];
     snprintf(port_str, sizeof(port_str)-1, "%u", m_config->port);

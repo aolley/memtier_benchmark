@@ -73,7 +73,7 @@ struct connect_info {
     int ci_protocol;
     socklen_t ci_addrlen;
     struct sockaddr *ci_addr;
-    char addr_buf[sizeof(struct sockaddr_in)];
+    char addr_buf[sizeof(struct sockaddr_in6)];
 };
 
 struct server_addr {
